@@ -1330,7 +1330,7 @@ class GLISp(GLIS_base):
                                                  n + round((self.expected_max_evals - n) / 2),
                                                  n + round(3 * (self.expected_max_evals - n) / 4)])
         # remove self-calibration steps smaller than n_initial_random
-        self.RBFcalibrationSteps = self.RBFcalibrationSteps[np.where(self.RBFcalibrationSteps >= n)[0]]
+        self.RBFcalibrationSteps = self.RBFcalibrationSteps[np.where(self.RBFcalibrationSteps >= self.n_initial_random)[0]]
         if self.thetas is None:
             thetas = np.logspace(-1, 1, 11, False)
             self.thetas = thetas[:-1]
